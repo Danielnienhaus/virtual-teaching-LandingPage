@@ -294,6 +294,14 @@ Zur Größenordnung: In Deutschland gibt es rund 24.000 Fußballvereine mit weit
 7. **Accounts (kostenlos):** Du brauchst ein GitHub-Konto (hast du), ein Vercel-Konto und ein Supabase-Konto. Ich kann dich beim Einrichten Schritt für Schritt anleiten.
 8. **Anspruch:** Eher Hobbyprojekt für die eigene Region oder perspektivisch ein Produkt, mit dem du Geld verdienen willst? Das beeinflusst z. B., ob du eine UG gründest, sobald Sponsoren- oder Abo-Einnahmen fließen.
 
+### Entscheidungen (Stand 22.10.2026)
+- **Name:** Testkick.
+- **Pilot-Region:** Kreis Rees/Bocholt (FVN) und Kreis Borken (FLVW).
+- **Altersklasse im Pilot:** B-Junioren (Jahrgänge 2010/2011).
+- **DFBnet:** Testspiele werden von den Trainern selbst in DFBnet angelegt. Die Checkliste orientiert sich an der Eingabemaske (Screenshot folgt).
+- **Startliste:** Alle Mannschaften der B-Junioren Kreisliga B, Gruppe 1 (Gruppe von DJK Rhede) und der zweiten Kreisliga-B-Gruppe, siehe `startliste-vereine.csv` (wird noch vervollständigt).
+- **Repository:** Neues, eigenes Repository `testkick`.
+
 **Nächster Schritt:** Wenn du die Fragen beantwortet hast, baue ich als Erstes den **klickbaren Prototyp (Phase 1)**. Den kannst du direkt auf deinem Handy installieren und Trainerkollegen zeigen.
 
 ---
