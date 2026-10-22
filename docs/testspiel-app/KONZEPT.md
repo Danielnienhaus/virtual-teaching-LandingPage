@@ -40,7 +40,7 @@ Ein Testspiel zu organisieren läuft heute so ab:
 
 ## 4. Produktidee in einem Satz
 
-> Trainer stellen **Testspiel-Gesuche** (Datum, Zeitfenster, Heim/Auswärts, Wunschstärke) ein. Die App zeigt **passende Gegner in der Region**. Mit einem Klick geht eine Anfrage raus, **auch an Trainer, die die App noch nicht nutzen** (Einladungslink per WhatsApp/E-Mail). Nach der Zusage erzeugt die App alles, was man für **DFBnet** und den Kalender braucht.
+> Trainer stellen **Testspiel-Gesuche** (Datum, Zeitfenster, Heim/Auswärts, Wunschstärke) ein. Die App zeigt **passende Gegner in der Region**. Mit einem Klick geht eine Anfrage raus, **auch an Trainer, die die App noch nicht nutzen** (Einladungslink per WhatsApp/E-Mail). Nach der Zusage geht das fertig vereinbarte Spiel automatisch an den **Verein zum Anlegen in DFBnet**, und beide Trainer bekommen einen Kalendereintrag.
 
 ## 5. Funktionen
 
@@ -69,15 +69,14 @@ Ein Testspiel zu organisieren läuft heute so ab:
 **D. Anfrage → Gegenvorschlag → Zusage**
 - Mit einem Klick eine Anfrage an ein Gesuch oder eine Mannschaft senden.
 - Der Gegner kann zusagen, ablehnen oder einen Gegenvorschlag machen (anderer Termin, Heim/Auswärts tauschen).
-- Status: *angefragt → bestätigt → in DFBnet angelegt → gespielt*. Absagen sind ebenfalls möglich.
+- Status: *angefragt → vereinbart → an Verein gemeldet → in DFBnet angelegt → gespielt*. Absagen sind ebenfalls möglich.
 - Ist ein Slot vergeben, werden andere offene Anfragen auf diesen Slot automatisch und freundlich abgesagt.
 
 **E. Einladungslinks für Trainer ohne App** (der eigentliche Wachstumsmotor, siehe Kapitel 6)
 
 **F. Nach der Zusage**
 - **Kalendereintrag** (.ics-Datei bzw. Abo-Link für Google, Apple, Outlook).
-- **DFBnet-Assistent:** Eine Übersicht mit allen Daten, die man zum Anlegen des Freundschaftsspiels braucht (Heimverein, Gastverein, Mannschaftsart, Datum, Anstoß, Spielstätte, Spielzeit, Schiedsrichter gewünscht ja/nein). Die Daten lassen sich kopieren, und es gibt einen Direktlink zum DFBnet-Login. Danach hakt man „in DFBnet angelegt“ ab.
-- Optional: Nachricht an den Jugendleiter, falls der das Spiel in DFBnet anlegt (per WhatsApp-Link oder E-Mail).
+- **Übergabe an den Verein (DFBnet):** Trainer dürfen Freundschaftsspiele meist nicht selbst anlegen. Die App schickt deshalb dem Spielmelder des Heimvereins (Jugendleiter) per WhatsApp oder E-Mail alle Daten (Heimverein, Gastverein, Mannschaftsart, Datum, Anstoß, Spielstätte, Spielzeit, Schiedsrichter ja/nein) mit Link auf eine Statusseite, wo er „in DFBnet angelegt“ abhakt. Details in Kapitel 8.
 - **Erinnerungen:** 2 Tage vorher „Steht das Spiel noch? In DFBnet angelegt?“ sowie Anfahrt und Treffpunkt.
 
 ### 5.2 Version 2 (nach den ersten Tests)
@@ -159,11 +158,14 @@ Die Spielklassen-Stufen werden einmalig pro Verband und Altersklasse als Tabelle
 - **Es gibt keine öffentliche Schnittstelle**, über die eine fremde App Spiele in DFBnet anlegen kann. DFBnet gehört DFB-Medien, und Zugänge bekommen nur berechtigte Vereinsfunktionäre.
 - Eine Automatisierung über gespeicherte DFBnet-Zugangsdaten der Nutzer (Bot klickt sich durch) **auf keinen Fall**: Das ist ein Sicherheitsrisiko, verstößt vermutlich gegen die Nutzungsbedingungen und kann jederzeit kaputtgehen.
 
+**Praxis (bestätigt vom Pilot-Trainer):** Trainer haben in der Regel **keine Berechtigung**, Freundschaftsspiele in DFBnet anzulegen. Das macht der **Verein** (Jugendleiter, Jugendgeschäftsführer oder Vereinsadmin). Der Schwerpunkt der App liegt deshalb klar auf dem **Vereinbaren zwischen den Trainern**. DFBnet ist nur der letzte Schritt, und den übergibt die App sauber an den Verein.
+
 **Was die App stattdessen tut (MVP):**
-1. **DFBnet-Checkliste** pro bestätigtem Spiel mit allen Feldern in der Reihenfolge, in der DFBnet sie abfragt, jeweils mit Kopier-Button.
-2. Hinweis auf die **Fristen** im jeweiligen Kreis (Schiri-Anforderung oft einige Tage vorher; wird pro Kreis gepflegt).
-3. Wer legt an? Standardmäßig die **Heimmannschaft**. Die App erinnert genau diese Seite und zeigt der Gastmannschaft den Status.
-4. Wenn der Trainer selbst keinen DFBnet-Zugang hat: Button „An Jugendleiter weiterleiten“ (WhatsApp/E-Mail mit allen Daten).
+1. **Alles zwischen den Trainern klären:** Termin, Anstoß, Heim/Auswärts, Platz (Rasen/Kunstrasen), Spielzeit, Schiedsrichter gewünscht ja/nein. Das läuft über Anfrage, Gegenvorschlag und Zusage (Kapitel 5.1 D). Erst wenn beide Seiten zugestimmt haben, gilt das Spiel als **vereinbart**.
+2. **Übergabe an den Verein:** Pro Verein ist ein **„Spielmelder“** hinterlegt (Name plus WhatsApp-Nummer oder E-Mail des Jugendleiters). Nach der Vereinbarung tippt der Trainer der **Heimmannschaft** auf „An Verein zum Anlegen schicken“. Es öffnet sich eine vorformulierte WhatsApp-Nachricht oder E-Mail mit allen Daten in der Reihenfolge der DFBnet-Maske und einem Link.
+3. **Statusseite für den Spielmelder, ohne Login:** Über den Link sieht der Jugendleiter alle Spieldaten mit Kopier-Buttons und tippt auf **„In DFBnet angelegt“**. Beide Trainer sehen den Status sofort. Hat der Verein einen Account (Jugendleiter-Ansicht), sammelt die App alle offenen Meldungen aller Mannschaften an einer Stelle.
+4. **Erinnerungen:** Ist ein Spiel nach X Tagen noch nicht als angelegt markiert, erinnert die App den Heimtrainer, der beim Verein nachhakt. Die **Fristen** pro Kreis (Schiri-Anforderung) werden dafür gepflegt.
+5. **Änderungen und Absagen** nach der Meldung werden ebenfalls automatisch an den Spielmelder weitergegeben („Spiel am 14.11. abgesagt, bitte in DFBnet stornieren“).
 
 **Später:** Mit Nutzerzahlen im Rücken bei DFB-Medien bzw. beim Landesverband anfragen (Kooperation, offizielle Schnittstelle). Das ist auch ein Argument für Investoren oder Förderprogramme.
 
@@ -225,7 +227,8 @@ Eine **PWA** ist eine Website, die sich wie eine App verhält:
 ```
 verband        (id, name, kürzel)                               z. B. FVN, FLVW
 kreis          (id, verband_id, name)                           z. B. Rees/Bocholt
-verein         (id, name, kreis_id, website_url, kontaktseite_url, logo_url, verifiziert)
+verein         (id, name, kreis_id, website_url, kontaktseite_url, logo_url, verifiziert,
+                spielmelder_name, spielmelder_kontakt)          Jugendleiter, der in DFBnet anlegt
 spielstaette   (id, verein_id, name, adresse, geo_point, platzart, flutlicht)
 mannschaft     (id, verein_id, altersklasse, geschlecht, nummer, spielklasse_id,
                 staerke_index, heim_spielstaette_id)
@@ -238,7 +241,7 @@ anfrage        (id, gesuch_id?, von_mannschaft_id, an_mannschaft_id, vorschlag_t
                 heim_mannschaft_id, status, nachricht)
 einladung      (id, token, anfrage_id, kanal, empfaenger_name, angenommen_am)  ohne Login einsehbar
 spiel          (id, heim_mannschaft_id, gast_mannschaft_id, anstoss, spielstaette_id,
-                dfbnet_status, schiri_gewuenscht, status, ergebnis)
+                dfbnet_status, gemeldet_am, angelegt_am, schiri_gewuenscht, status, ergebnis)
 bewertung      (id, spiel_id, von_mannschaft_id, staerke_passend, fairness, kommentar)
 ```
 
@@ -270,7 +273,7 @@ Zur Größenordnung: In Deutschland gibt es rund 24.000 Fußballvereine mit weit
 |---|---|---|
 | **0 – Klärung** | Offene Fragen (Kapitel 13), Name, Test-Region festlegen, Startliste der Vereine im Umkreis erstellen | 1 Woche |
 | **1 – Klickbarer Prototyp** | Die wichtigsten Screens (Gesuch erstellen, Börse, Einladungsseite) als PWA ohne echtes Backend, zum Zeigen | 1–2 Wochen |
-| **2 – MVP** | Login, Mannschaftsprofil, Gesuche, Suche mit Umkreis, Anfrage/Zusage, Einladungslinks (WhatsApp/E-Mail), Kalender-Export, DFBnet-Checkliste | 4–6 Wochen |
+| **2 – MVP** | Login, Mannschaftsprofil, Gesuche, Suche mit Umkreis, Anfrage/Zusage, Einladungslinks (WhatsApp/E-Mail), Kalender-Export, Übergabe an den Verein (Spielmelder) | 4–6 Wochen |
 | **3 – Pilot** | 10–20 Trainer aus deinem Umfeld (DJK Rhede plus Nachbarvereine), Wintervorbereitung als echter Test, Feedback sammeln | 4–8 Wochen |
 | **4 – Version 2** | Push, Chat, Bewertungen und Stärke-Index, Jugendleiter-Ansicht | 6–8 Wochen |
 | **5 – Ausrollen** | Weitere Kreise, Sponsoren, Verein Pro, ggf. Store-Apps | laufend |
@@ -288,7 +291,7 @@ Zur Größenordnung: In Deutschland gibt es rund 24.000 Fußballvereine mit weit
 1. **Name und Domain:** Gefällt dir „Testkick“, oder hast du eine eigene Idee?
 2. **Test-Region:** Nur Kreis Rees/Bocholt (FVN) oder gleich auch Kreis Borken (FLVW) und die Niederlande-Grenzregion dazu?
 3. **Altersklassen im Pilot:** Nur Jugend ab D, oder auch Senioren und Juniorinnen?
-4. **DFBnet-Praxis bei euch:** Legst du Freundschaftsspiele selbst in DFBnet an, oder macht das euer Jugendleiter? Welche Felder werden abgefragt, und welche Fristen gelten im Kreis (für die Checkliste)? Ein Screenshot der Eingabemaske wäre super.
+4. **DFBnet-Praxis bei euch:** ~~geklärt~~ Der Verein legt an. Offen: Wer ist bei der DJK Rhede der Ansprechpartner (Jugendleiter), und welche Daten braucht er von euch Trainern? Ein Screenshot der DFBnet-Maske vom Jugendleiter wäre trotzdem hilfreich.
 5. **Startliste:** 15–30 Vereine im Umkreis, mit denen du testen möchtest, plus 3–5 Trainer, die du persönlich kennst und die mitmachen würden.
 6. **Repository:** Soll ich ein neues Repository für die App anlegen (Empfehlung), oder hier im bestehenden Repo in einem Unterordner starten?
 7. **Accounts (kostenlos):** Du brauchst ein GitHub-Konto (hast du), ein Vercel-Konto und ein Supabase-Konto. Ich kann dich beim Einrichten Schritt für Schritt anleiten.
@@ -298,7 +301,7 @@ Zur Größenordnung: In Deutschland gibt es rund 24.000 Fußballvereine mit weit
 - **Name:** Testkick.
 - **Pilot-Region:** Kreis Rees/Bocholt (FVN) und Kreis Borken (FLVW).
 - **Altersklasse im Pilot:** B-Junioren (Jahrgänge 2010/2011).
-- **DFBnet:** Testspiele werden von den Trainern selbst in DFBnet angelegt. Die Checkliste orientiert sich an der Eingabemaske (Screenshot folgt).
+- **DFBnet:** Trainer können Freundschaftsspiele **nicht selbst** anlegen, das macht der Verein. Testkick konzentriert sich deshalb auf das Vereinbaren zwischen den Trainern (Termin, Heim/Auswärts usw.) und übergibt das fertige Spiel an den Spielmelder des Vereins (Kapitel 8).
 - **Startliste:** Alle Mannschaften der B-Junioren Kreisliga B, Gruppe 1 (Gruppe von DJK Rhede) und der zweiten Kreisliga-B-Gruppe, siehe `startliste-vereine.csv` (wird noch vervollständigt).
 - **Repository:** Neues, eigenes Repository `testkick`.
 
